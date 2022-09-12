@@ -15,11 +15,11 @@ if is_valid(video_link):
     downloader_link = list(video_link)
     downloader_link.insert(12, "ss")
     downloader_link = "".join(downloader_link)
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+    driver = webdriver.Chrome(ChromeDriverManager().install())
     driver.implicitly_wait(5)
     driver.maximize_window()
     driver.get(downloader_link)
-    button = driver.find_element_by_xpath('//*[@id="sf_result"]/div/div[1]/div[2]/div[2]/div[1]/a')
+    button = driver.find_element_by_xpath('def-btn-box')
     button.click()
 else:
     print("The link that you have entered is not valid.")
